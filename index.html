@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BOMING@YONSEI</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    header {
+      background-color: #1a1a1a;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      letter-spacing: 2px;
+    }
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      font-size: 1.8em;
+      color: #222;
+      border-left: 4px solid #007bff;
+      padding-left: 10px;
+    }
+    p {
+      line-height: 1.7;
+      margin: 15px 0;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #1a1a1a;
+      color: white;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>BOMING@YONSEI</h1>
+    <p>Blog Post for Paper Review</p>
+  </header>
+  <main>
+    <h2>Exploring C-NAV: How Vision and Language Work Together for Navigation</h2>
+    <p><strong>Paper:</strong> <a href="https://arxiv.org/abs/2510.20685" target="_blank">C-NAV: Cross-Modal Alignment and Vision Navigation with Natural Language Instructions</a></p>
+
+    <p><strong>Author:</strong> Boming Zhao</p>
+
+    <p>In recent years, the field of embodied AI has rapidly advanced as researchers aim to enable intelligent agents to understand and act within complex physical environments. A particularly challenging subfield is <em>Vision-and-Language Navigation (VLN)</em>, which requires an agent to follow natural language instructions to navigate in visual scenes. The paper “C-NAV: Cross-Modal Alignment and Vision Navigation with Natural Language Instructions” introduces a novel framework that significantly improves cross-modal understanding between vision and language for navigation tasks.</p>
+
+    <h2>1. Motivation and Background</h2>
+    <p>Traditional VLN models often struggle to align visual perception with linguistic guidance. Most existing methods rely heavily on either visual features or textual cues, leading to misinterpretations of complex instructions. For instance, when an instruction says “walk past the red sofa and turn left at the bookshelf,” an agent must not only identify these objects but also understand their spatial relations and sequence. The motivation behind C-NAV is to bridge this semantic and perceptual gap through a robust cross-modal alignment mechanism.</p>
+
+    <h2>2. The C-NAV Framework</h2>
+    <p>C-NAV proposes a <strong>Cross-Modal Alignment Network</strong> that tightly couples visual and linguistic representations. The architecture integrates three major components:</p>
+    <ul>
+      <li><strong>Visual Encoder:</strong> Based on a vision transformer backbone, it captures high-level scene features and spatial structures.</li>
+      <li><strong>Language Encoder:</strong> A pre-trained language model that processes natural language instructions into contextual embeddings.</li>
+      <li><strong>Alignment Module:</strong> This is the core innovation of the paper — a dynamic fusion layer that aligns vision and text through attention mechanisms, enabling the model to adaptively weigh the importance of visual and linguistic cues depending on navigation context.</li>
+    </ul>
+    <p>Unlike prior works that use static fusion, C-NAV’s alignment is <em>context-aware</em> — it learns which modality dominates in each navigation step, allowing for smoother instruction following and better generalization to unseen environments.</p>
+
+    <h2>3. Training Strategy and Datasets</h2>
+    <p>The paper reports training on the Room-to-Room (R2R) and Room-for-Room (R4R) datasets, both standard benchmarks for VLN. A two-stage training pipeline is adopted: first, a pretraining stage aligns the visual and linguistic spaces via masked language modeling and contrastive learning; second, a reinforcement learning stage optimizes navigation performance directly using success rate and trajectory length as feedback.</p>
+
+    <h2>4. Experimental Results</h2>
+    <p>C-NAV achieves state-of-the-art performance on both seen and unseen environments. In particular, it demonstrates strong generalization capabilities when tested on environments not present during training. Quantitatively, the model improves success rates by 6–8% over previous baselines and reduces navigation errors significantly. Qualitatively, the attention visualizations show that the model correctly associates instruction words (e.g., “door,” “stairs,” “turn right”) with relevant image regions, proving effective cross-modal reasoning.</p>
+
+    <h2>5. Analysis and Insights</h2>
+    <p>One of the key contributions of C-NAV lies in its ability to dynamically balance the influence of visual and textual inputs. This flexible mechanism mirrors how humans navigate — sometimes relying more on visual cues, sometimes on verbal instructions. The cross-modal alignment module also reduces overfitting to language priors, a common issue in VLN models where the agent might memorize instruction patterns rather than understanding them.</p>
+
+    <p>However, challenges remain. The model still depends heavily on high-quality scene representations and may face difficulties in environments with occlusions or ambiguous instructions. Future research could extend C-NAV by integrating 3D spatial reasoning or multimodal memory systems.</p>
+
+    <h2>6. Personal Reflection</h2>
+    <p>From my perspective, this paper represents an important step toward genuine multimodal intelligence. By unifying perception and language understanding, C-NAV moves closer to how humans interpret and act in the world. What impresses me most is the balance between simplicity and effectiveness — the alignment module is conceptually intuitive yet delivers measurable improvements. As a student interested in AI and robotics, I find this work inspiring because it points to a future where autonomous agents can truly understand and cooperate with humans through natural communication.</p>
+
+    <p>In conclusion, C-NAV is not only a technical achievement but also a conceptual contribution to the ongoing quest for embodied intelligence. It highlights the power of cross-modal learning and sets a promising direction for future research in vision-and-language understanding.</p>
+
+  </main>
+  <footer>
+    <p>© 2025 Boming Zhao | Yonsei University</p>
+  </footer>
+</body>
+</html>
